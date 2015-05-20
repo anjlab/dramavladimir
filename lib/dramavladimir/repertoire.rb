@@ -6,7 +6,8 @@ module Dramavladimir
     attr_accessor :doc, :url, :announce, :announce_content
 
     def initialize(attributes = {})
-      @url = "http://www.dramavladimir.ru/playbill"
+      @site = "http://www.dramavladimir.ru"
+      @url = "#{@site}/playbill"
       doc
     end
 
@@ -69,7 +70,7 @@ module Dramavladimir
 
     def prepare_images
       return if announce_content.nil? || announce_content.css('.rokbox-album-inner').nil?
-      announce_content.css('.rokbox-album-inner a').map { |image| image.attribute('href').value }
+      announce_content.css('.rokbox-album-inner a').map { |image| "#{@site}#{image.attribute('href').value}" }
     end
 
     def announce_content
