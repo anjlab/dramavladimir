@@ -2,6 +2,7 @@ require "dramavladimir/version"
 require 'nokogiri'
 require 'httpclient'
 require 'dramavladimir/repertoire'
+require 'dramavladimir/announce'
 
 module Dramavladimir
   NotFound = Class.new StandardError
