@@ -16,7 +16,7 @@ module Dramavladimir
     end
 
     def images
-      return if doc.nil? || doc.css('.rokbox-album-inner').empty?
+      return [] if doc.css('.rokbox-album-inner').empty?
       doc.css('.rokbox-album-inner a').map { |image| "#{@site}#{image.attribute('href').value}" }
     end
 
