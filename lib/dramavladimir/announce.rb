@@ -4,6 +4,7 @@ module Dramavladimir
 
     def initialize(url, attributes = {})
       @url = url
+      @site = "http://www.dramavladimir.ru"
     end
 
     def content

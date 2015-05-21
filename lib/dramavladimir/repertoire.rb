@@ -18,7 +18,7 @@ module Dramavladimir
           @spectacle = spectacle
           next unless schedules
           s = { title: title, scene: scene, schedules: schedules }
-          s = s.merge({ content: announce.content, video: announce.video, images: announce.images, }) if announce
+          s = s.merge({ content: announce.content, video: announce.video, images: announce.images }) if announce
           spectacles << s
         end
       end
